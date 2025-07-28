@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Futuristic Aesthetic Color Scheme */
+    --background: 220 13% 96%; /* Light Gray #f4f6f8 */
+    --foreground: 240 10% 20%; /* Dark Gray #333333 for text */
+
+    --card: 0 0% 100%; /* White for cards/modals on light gray background */
+    --card-foreground: 240 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 20%;
+
+    --primary: 210 100% 25%; /* Dark Blue #004080 */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 195 100% 50%; /* Light Blue Neon #00bfff */
+    --secondary-foreground: 210 100% 10%; /* Very Dark Blue for text on neon (high contrast) */
+    
+    --muted: 220 10% 90%; /* Lighter Gray for muted backgrounds */
+    --muted-foreground: 220 10% 45%; /* Medium Gray for muted text */
+
+    --accent: 195 100% 45%; /* Slightly darker neon for accents if needed, or primary */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%; /* Standard Red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 85%; /* Light Gray for borders */
+    --input: 210 20% 96%; /* Slightly off-white for inputs on light gray bg */
+    --input-border: 210 10% 80%; /* Border for inputs */
+    --input-focus-ring: 195 100% 50%; /* Light Blue Neon for focus rings */
+    --placeholder-text: 210 15% 60%; /* Grayish-blue for placeholders */
+
+    --radius: 0.75rem; /* Slightly more rounded for modern feel */
+
+    /* Custom properties for login page */
+    --login-image-bg-start: #004080; /* primary */
+    --login-image-bg-end: #00bfff; /* secondary */
+    --login-form-bg: 220 13% 97%; /* Almost white, slightly off for depth #f7f8fA */
+  }
+
+  .dark {
+    /* Dark Theme Adjustments for Futuristic Aesthetic */
+    --background: 220 20% 10%; /* Very Dark Blue/Gray */
+    --foreground: 220 15% 88%; /* Light Gray/Off-white text */
+
+    --card: 220 20% 13%;
+    --card-foreground: 220 15% 88%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 220 15% 88%;
+
+    --primary: 195 100% 55%; /* Light Blue Neon for primary in dark mode */
+    --primary-foreground: 210 100% 10%; 
+    
+    --secondary: 210 100% 30%; /* Dark Blue for secondary in dark mode */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 195 100% 60%; /* Brighter neon for accents */
+    --accent-foreground: 210 100% 10%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 16%; 
+    --input-border: 220 20% 30%;
+    --input-focus-ring: 195 100% 55%;
+    --placeholder-text: 220 15% 50%;
+
+    --login-image-bg-start: #002040; /* Darker primary for dark mode */
+    --login-image-bg-end: #008bcc; /* Darker secondary for dark mode */
+    --login-form-bg: 220 20% 12%; 
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Modern sans-serif font */
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+}
+
+/* Custom scrollbar for a more modern look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted) / 0.5);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.6);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+.kanban-column {
+  min-height: 300px; /* Ensure columns have a minimum height */
+}
